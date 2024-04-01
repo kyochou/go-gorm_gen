@@ -1,4 +1,4 @@
-module github.com/kyochou/go-gorm_gen
+module gorm.io/gen
 
 go 1.18
 
