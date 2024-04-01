@@ -65,13 +65,17 @@ func (c *Column) ToField(nullable, coverable, signable bool) *Field {
 		comment = c
 	}
 
+	jsonTag := c.jsonTagNS(c.Name())
+	if strings.HasPrefix(fieldType, `*`) {
+		jsonTag += `,omitempty`
+	}
 	return &Field{
 		Name:             c.Name(),
 		Type:             fieldType,
 		ColumnName:       c.Name(),
 		MultilineComment: c.multilineComment(),
 		GORMTag:          c.buildGormTag(),
-		Tag:              map[string]string{field.TagKeyJson: c.jsonTagNS(c.Name())},
+		Tag:              map[string]string{field.TagKeyJson: jsonTag},
 		ColumnComment:    comment,
 	}
 }
