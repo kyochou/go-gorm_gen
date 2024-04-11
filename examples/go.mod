@@ -5,7 +5,7 @@ go 1.19
 require (
 	gorm.io/driver/mysql v1.5.6
 	gorm.io/driver/sqlite v1.5.5
-	gorm.io/gen v0.3.25
+	gorm.io/gen v0.3.26
 	gorm.io/gorm v1.25.9
 )
 

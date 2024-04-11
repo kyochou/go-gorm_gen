@@ -133,7 +133,7 @@ var (
 		"mediumblob": func(string) string { return "[]byte" },
 		"longblob":   func(string) string { return "[]byte" },
 		"text":       func(string) string { return "string" },
-		"json":       func(string) string { return "string" },
+		"json":       func(string) string { return "json.RawMessage" },
 		"enum":       func(string) string { return "string" },
 		"time":       func(string) string { return "*time.Time" },
 		"date":       func(string) string { return "*time.Time" },
