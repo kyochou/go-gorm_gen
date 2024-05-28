@@ -27,6 +27,11 @@ var (
 
 // ======================== generic field =======================
 
+// NewColumn create raw field
+func NewColumn(column clause.Column) Field {
+	return Field{expr: expr{col: column}}
+}
+
 // NewField create new field
 func NewField(table, column string, opts ...Option) Field {
 	return Field{expr: expr{col: toColumn(table, column, opts...)}}
