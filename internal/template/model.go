@@ -16,6 +16,11 @@ import (
 
 {{if .TableName -}}const TableName{{.ModelStructName}} = "{{.TableName}}"{{- end}}
 
+const (
+{{range .Fields}}
+	{{$.ModelStructName}}{{.Name}} = "{{.ColumnName}}"{{end}}
+)
+
 // {{.ModelStructName}} {{.StructComment}}
 type {{.ModelStructName}} struct {
     {{range .Fields}}
